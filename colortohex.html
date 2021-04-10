@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColortoHex - Convert Color and HEX</title>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        *{font-family:"Nanum Gothic", "맑은 고딕", sans-serif, serif, "돋움", "굴림";}
+        legend{font-size:2em; color:gray;}
+        fieldset{margin:10px; padding:20px;}
+        #result{width:100px; height:100px; border:1px solid black; margin:10px; text-align:center;}
+        h1{font-size:2.5em;} h3{font-size:1.5em;}
+        body{background-color:#eee;}
+        button{background-color:blue; color:white; width:120px; height:25px; border-radius:5px;}
+        input[type=color]{border-radius:5px;}
+        
+    </style>
+    <script>
+        function convert() {
+            var hex=document.getElementById("hex").value;
+            var sharp=hex.substr(0, 1)
+            if ((sharp=="#")){
+                var result=document.getElementById("result");
+                result.style.backgroundColor=hex;}
+            else{
+                alert("Please write a valid value!");
+                var el = document.getElementsByClassName('hex');
+
+
+
+for(var i=0; i<el.length; i++){
+
+	el[i].value = '';
+
+}
+
+                document.getElementById("hex").focus();
+                hex.select()
+            }
+        }
+
+        function css(){
+            var radio1=document.getElementById("color").checked;
+            var radio2=document.getElementById("bg").checked;
+            var radio3=document.getElementById("border").checked;
+            var input=document.getElementById("ip2").value;
+            if (radio1=="true"){
+                css.value="color:"+input;
+            }
+            else if (radio2=="true"){
+                css.value="background-color:"+input;
+            }
+            else if (radio3=="true"){
+                css.value="border-color:"+input;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to ColortoHex</h1>
+    <h3>Convert Hex and color at here instantly.</h3>
+    <form oninput="op.value=ip.value;">
+    <fieldset>
+        <legend>Color To Hex</legend>
+        <label><b>Select Color</b>: <input type="color" name="ip" id="ip"></label><br>
+        <label><b>Hex Code</b>: <output name="op" id="op">#000000</output></label>
+    </fieldset>
+    </form>
+    <form>
+        <fieldset>
+            <legend>Hex To Color</legend>
+            <label><b>Hex Code</b>: <input placeholder='Include "#"' size="10" id="hex" class="hex" maxlength="7"></label><button type="button" onclick="convert();">Convert to Hex</button>
+            <div id="result">
+                Color here
+            </div>
+        </fieldset>
+    </form>
+    <form>
+        <fieldset>
+            <legend>Color To CSS</legend>
+            <h1>COMING SOON!</h1>
+        </fieldset>
+        </form>
+</body>
+</html>
