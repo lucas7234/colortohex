@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ColortoHex - Convert Color and HEX</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="css, css3, hex, color, color to hex, hex to color, css generator, css color generator, color to css, hex to css">
+    <meta name="description" content="Convert Color and Hex instantly at here.">
+    <meta name="author" content="lucas7234">
     <style>
         @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
         *{font-family:"Nanum Gothic", "맑은 고딕", sans-serif, serif, "돋움", "굴림";}
@@ -40,26 +44,70 @@ for(var i=0; i<el.length; i++){
             }
         }
 
-        function css(){
-            var radio1=document.getElementById("color").checked;
-            var radio2=document.getElementById("bg").checked;
-            var radio3=document.getElementById("border").checked;
-            var input=document.getElementById("ip2").value;
-            if (radio1=="true"){
-                css.value="color:"+input;
+        function csscolor(){
+            var csscolor=document.getElementById("ip2").value;
+            op2.value="{color:"+csscolor+";}"
+        }
+
+        function cssbg(){
+            var csscolor=document.getElementById("ip3").value;
+            op3.value="{background-color:"+csscolor+";}"
+        }
+        function cssborder(){
+            var csscolor=document.getElementById("ip4").value;
+            op4.value="{border-color:"+csscolor+";}"
+        }
+
+        function csscolor2(){
+            var csscolor2=document.getElementById("ip5").value;
+            op5.value="{color:"+csscolor2+";}"
+        }
+
+        function cssbg2(){
+            var csscolor2=document.getElementById("ip6").value;
+            op6.value="{background-color:"+csscolor2+";}"
+        }
+        function cssborder2(){
+            var csscolor2=document.getElementById("ip7").value;
+            op7.value="{border-color:"+csscolor2+";}"
+        }
+    </script>
+    <style>
+        ul{list-style-type:none;}
+        ul li{display:inline-block; width:300px;}
+        .navmenu a{text-decoration:none; border-top:3px solid black; color:black;}
+    </style>
+    <script>
+        /*We doesnt support IE*/
+        var agent=navigator.userAgent.toLowerCase();
+        var name=navigator.appName;
+
+        if(name == "Internet Explorer" || agent.indexOf("trident") > -1 || agent.indexOf("edge") > -1){
+            if(name == "Internet Explorer")//lower than ie 10
+            {
+                document.write("<h1>You cannot use ColorToHex in Internet Explorer.</h1><p>Download <a href='https://www.google.com/intl/ko/chrome/' target='_blank' style='text-decoration:underline; color:blue;'>Chrome</a> or <a href='https://www.mozilla.org/ko/firefox/new/' style='text-decoration:underline; color:blue;' target='_blank'>Firefox</a> to use ColorToHex. You can also use ColorToHex on Edge, Safari, Naver Whale, and etc.</p>");
             }
-            else if (radio2=="true"){
-                css.value="background-color:"+input;
-            }
-            else if (radio3=="true"){
-                css.value="border-color:"+input;
+            else{
+                if (agent.indexOf("trident") > -1){ //ie11
+                    document.write("<h1>You cannot use ColorToHex in Internet Explorer.</h1><p>Download <a href='https://www.google.com/intl/ko/chrome/' target='_blank' style='text-decoration:underline; color:blue;'>Chrome</a> or <a href='https://www.mozilla.org/ko/firefox/new/' style='text-decoration:underline; color:blue;' target='_blank'>Firefox</a> to use ColorToHex. You can also use ColorToHex on Edge, Safari, Naver Whale, and etc.</p>");
+                }
             }
         }
     </script>
 </head>
 <body>
-    <h1>Welcome to ColortoHex</h1>
-    <h3>Convert Hex and color at here instantly.</h3>
+    <header><h1>Welcome to ColortoHex</h1>
+    <h3>Convert Hex and color at here instantly.</h3></header>
+    <nav>
+        <ul>
+            <li class="navmenu"><a href="#1">Color To Hex</a></li>
+            <li class="navmenu"><a href="#2">Hex To Color</a></li>
+            <li class="navmenu"><a href="#3">Color To CSS</a></li>
+            <li class="navmenu"><a href="#4">Hex To CSS</a></li>
+        </ul>
+    </nav>
+    <br><br><br>
+    <section><article id="1">
     <form oninput="op.value=ip.value;">
     <fieldset>
         <legend>Color To Hex</legend>
@@ -67,20 +115,51 @@ for(var i=0; i<el.length; i++){
         <label><b>Hex Code</b>: <output name="op" id="op">#000000</output></label>
     </fieldset>
     </form>
+    </article><article id="2">
     <form>
         <fieldset>
             <legend>Hex To Color</legend>
-            <label><b>Hex Code</b>: <input placeholder='Include "#"' size="10" id="hex" class="hex" maxlength="7"></label><button type="button" onclick="convert();">Convert to Hex</button>
+            <label><b>Hex Code</b>: <input placeholder='Include "#"'  maxlength="7" size="10" id="hex" class="hex" ></label><button type="button" onclick="convert();">Convert to Hex</button>
             <div id="result">
                 Color here
             </div>
         </fieldset>
-    </form>
+    </form></article><article id="3">
     <form>
         <fieldset>
             <legend>Color To CSS</legend>
-            <h1>COMING SOON!</h1>
+            <h3>Text Color</h3>
+            <label><b>Select Color</b>: <input type="color" name="ip2" id="ip2"></label>
+            <button type="button" onclick="csscolor();">Convert to CSS</button><br>
+            <label><b>CSS Code</b>: <output name="op2" id="op2">{color:}</output></label><br><br>
+            <h3>Background Color</h3>
+            <label><b>Select Color</b>: <input type="color" name="ip3" id="ip3"></label>
+            <button type="button" onclick="cssbg();">Convert to CSS</button><br>
+            <label><b>CSS Code</b>: <output name="op3" id="op3">{background-color:}</output></label><br><br>
+            <h3>Border Color</h3>
+            <label><b>Select Color</b>: <input type="color" name="ip4" id="ip4"></label>
+            <button type="button" onclick="cssborder();">Convert to CSS</button><br>
+            <label><b>CSS Code</b>: <output name="op4" id="op4">{border-color:}</output></label>
         </fieldset>
         </form>
+    </article><article id="4">
+        <form>
+            <fieldset>
+                <legend>Hex To CSS</legend>
+                <h3>Text Color</h3>
+                <label><b>Select Color</b>: <input name="ip5" id="ip5" placeholder='Include "#"'  maxlength="7" size="10"></label>
+                <button type="button" onclick="csscolor2();">Convert to CSS</button><br>
+                <label><b>CSS Code</b>: <output name="op5" id="op5">{color:}</output></label><br><br>
+                <h3>Background Color</h3>
+                <label><b>Select Color</b>: <input name="ip6" id="ip6" placeholder='Include "#"'  maxlength="7" size="10"></label>
+                <button type="button" onclick="cssbg2();">Convert to CSS</button><br>
+                <label><b>CSS Code</b>: <output name="op6" id="op6">{background-color:}</output></label><br><br>
+                <h3>Border Color</h3>
+                <label><b>Select Color</b>: <input name="ip7" id="ip7" placeholder='Include "#"'  maxlength="7" size="10"></label>
+                <button type="button" onclick="cssborder2();">Convert to CSS</button><br>
+                <label><b>CSS Code</b>: <output name="op7" id="op7">{border-color:}</output></label>
+            </fieldset>
+            </form>
+        </article></section>
 </body>
 </html>
