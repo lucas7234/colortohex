@@ -20,6 +20,7 @@
         input[type=color]{border-radius:5px;}
         
     </style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
         function convert() {
             var hex=document.getElementById("hex").value;
@@ -97,20 +98,39 @@ for(var i=0; i<el.length; i++){
     <style>
 	    @media screen and (max-width:500px){ul, ul li{display:none;}}
     </style>
+	<script>
+		var eledark=document.querySelectorAll(".dark");
+		var elelight=document.querySelectorAll(".light");
+		var body=document.querySelector("body");
+	$(document).ready(function(){
+    	$("#darken").change(function(){
+        if($("#darken").is(":checked")){
+            eledark.style.color="black"
+	    body.style.backgroundColor="#3c3939"
+	    elelight.style.color="white"
+        }else{
+            eledark.style.color="white"
+	    body.style.backgroundColor="#eee"
+	    elelight.style.color="black"
+        }
+    });
+});
+	</script>
 </head>
 <body>
-    <header><h1>Welcome to ColortoHex</h1>
-    <h3>Convert Hex and color at here instantly.</h3></header>
+    <header><h1 class="light">Welcome to ColortoHex</h1>
+    <h3 class="light">Convert Hex and color at here instantly.</h3></header>
     <nav>
-        <ul>
+        <ul class="light">
             <li class="navmenu"><a href="#1">Color To Hex</a></li>
             <li class="navmenu"><a href="#2">Hex To Color</a></li>
             <li class="navmenu"><a href="#3">Color To CSS</a></li>
             <li class="navmenu"><a href="#4">Hex To CSS</a></li>
         </ul>
+	    <label class="light">Enable Dark Mode? <input type="checkbox" id="darken"></label>
     </nav>
     <br><br><br>
-    <section><article id="1">
+    <section class="light"><article id="1">
     <form oninput="op.value=ip.value;">
     <fieldset>
         <legend>Color To Hex</legend>
