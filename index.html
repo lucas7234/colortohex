@@ -99,24 +99,7 @@ for(var i=0; i<el.length; i++){
     <style>
 	    @media screen and (max-width:500px){ul, ul li{display:none;}}
     </style>
-	<script>
-		var eledark=document.querySelectorAll(".dark");
-		var elelight=document.querySelectorAll(".light");
-		var body=document.querySelector("body");
-	$(document).ready(function(){
-    	$("#darken").change(function(){
-        if($("#darken").is(":checked")){
-            eledark.style.color="black"
-	    body.style.backgroundColor="#3c3939"
-	    elelight.style.color="white"
-        }else{
-            eledark.style.color="white"
-	    body.style.backgroundColor="#eee"
-	    elelight.style.color="black"
-        }
-    });
-});
-	</script>
+	
 </head>
 <body>
     <header><h1 class="light">Welcome to ColortoHex</h1>
