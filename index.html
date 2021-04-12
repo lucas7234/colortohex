@@ -46,30 +46,24 @@ for(var i=0; i<el.length; i++){
             }
         }
 
-        function csscolor(){
+        function css(){
             var csscolor=document.getElementById("ip2").value;
             op2.value="{color:"+csscolor+";}"
-        }
-
-        function cssbg(){
+        
             var csscolor=document.getElementById("ip3").value;
             op3.value="{background-color:"+csscolor+";}"
-        }
-        function cssborder(){
+       
             var csscolor=document.getElementById("ip4").value;
             op4.value="{border-color:"+csscolor+";}"
         }
 
-        function csscolor2(){
+        function csshex(){
             var csscolor2=document.getElementById("ip5").value;
             op5.value="{color:"+csscolor2+";}"
-        }
-
-        function cssbg2(){
+       
             var csscolor2=document.getElementById("ip6").value;
             op6.value="{background-color:"+csscolor2+";}"
-        }
-        function cssborder2(){
+        
             var csscolor2=document.getElementById("ip7").value;
             op7.value="{border-color:"+csscolor2+";}"
         }
@@ -115,7 +109,7 @@ for(var i=0; i<el.length; i++){
     </fieldset>
     </form>
     </article><article id="2">
-    <form>
+    <form oninput="convert()">
         <fieldset>
             <legend>Hex To Color</legend>
             <label><b>Hex Code</b>: <input placeholder='Include "#"'  maxlength="7" size="10" id="hex" class="hex" ></label><button type="button" onclick="convert();">Convert to Hex</button>
@@ -124,7 +118,7 @@ for(var i=0; i<el.length; i++){
             </div>
         </fieldset>
     </form></article><article id="3">
-    <form>
+    <form oninput="css();">
         <fieldset>
             <legend>Color To CSS</legend>
             <h3>Text Color</h3>
@@ -142,21 +136,21 @@ for(var i=0; i<el.length; i++){
         </fieldset>
         </form>
     </article><article id="4">
-        <form>
+        <form oninput="csshex();">
             <fieldset>
                 <legend>Hex To CSS</legend>
                 <h3>Text Color</h3>
                 <label><b>Select Color</b>: <input name="ip5" id="ip5" placeholder='Include "#"'  maxlength="7" size="10"></label>
                 <button type="button" onclick="csscolor2();">Convert to CSS</button><br>
-                <label><b>CSS Code</b>: <output name="op5" id="op5">{color:}</output></label><br><br>
+                <label><b>CSS Code</b>: <output name="op5" id="op5">{color:#000000;}</output></label><br><br>
                 <h3>Background Color</h3>
                 <label><b>Select Color</b>: <input name="ip6" id="ip6" placeholder='Include "#"'  maxlength="7" size="10"></label>
                 <button type="button" onclick="cssbg2();">Convert to CSS</button><br>
-                <label><b>CSS Code</b>: <output name="op6" id="op6">{background-color:}</output></label><br><br>
+                <label><b>CSS Code</b>: <output name="op6" id="op6">{background-color:#000000;}</output></label><br><br>
                 <h3>Border Color</h3>
                 <label><b>Select Color</b>: <input name="ip7" id="ip7" placeholder='Include "#"'  maxlength="7" size="10"></label>
                 <button type="button" onclick="cssborder2();">Convert to CSS</button><br>
-                <label><b>CSS Code</b>: <output name="op7" id="op7">{border-color:}</output></label>
+                <label><b>CSS Code</b>: <output name="op7" id="op7">{border-color:#000000;}</output></label>
             </fieldset>
             </form>
         </article></section>
